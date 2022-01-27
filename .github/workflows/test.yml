@@ -1,0 +1,16 @@
+name: Carga Env Vars
+
+on: 
+  workflow_dispatch:
+  
+env:
+  PROFILE: 'alm-one-pre'
+jobs:
+  mvn-build:
+    name: Maven build
+    runs-on: almmc_redhat_runner
+    steps:
+      - name: Test bash
+        run: echo test
+        shell: bash
+        
