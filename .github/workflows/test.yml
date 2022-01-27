@@ -9,9 +9,10 @@ jobs:
     runs-on: 'ubuntu-latest'
     steps:
       - name: Set env
-        run: test_var="test"
         shell: bash
+        run: |
+          test_var="test"
+          echo "TAG_VERSION=$test_var" >> $GITHUB_ENV
       - name: Test bash
-        run: echo "$test_var"
         shell: bash
-        
+        run: echo "$TAG_VERSION"
