@@ -2,13 +2,11 @@ name: Carga Env Vars
 
 on: 
   workflow_dispatch:
-  
-env:
-  PROFILE: 'ubuntu-latest'
+
 jobs:
-  mvn-build:
-    name: Maven build
-    runs-on: almmc_redhat_runner
+  env-vars:
+    name: Vars
+    runs-on: 'ubuntu-latest'
     steps:
       - name: Set env
         run: test_var="test"
