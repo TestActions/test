@@ -4,13 +4,16 @@ on:
   workflow_dispatch:
   
 env:
-  PROFILE: 'alm-one-pre'
+  PROFILE: 'ubuntu-latest'
 jobs:
   mvn-build:
     name: Maven build
     runs-on: almmc_redhat_runner
     steps:
+      - name: Set env
+        run: test_var="test"
+        shell: bash
       - name: Test bash
-        run: echo test
+        run: echo "$test_var"
         shell: bash
         
